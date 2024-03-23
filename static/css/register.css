@@ -1,0 +1,239 @@
+a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .nav-div {
+    background-color: #141313;
+    height: 8vh;
+  }
+
+  em {
+    color: #2584ff;
+    font-style: normal;
+  }
+
+  nav {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+  }
+
+  nav ul li a {
+    padding: 12px;
+    border-radius: 22px;
+    height: 1rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(234 231 231);
+    font-size: 14px;
+    transition: all 0.2s ease-in;
+  }
+
+  .a_class {
+    position: relative;
+    width: 5rem;
+    border-radius: 22px;
+    z-index: 0;
+  }
+
+  .login_btn {
+    background: red;
+    border-radius: 22px;
+    font-weight: 400;
+    transition: all 0.2s ease-in;
+  }
+
+  .login_btn:hover {
+    background: rgb(255, 0, 0, 0.8);
+  }
+
+  .log-sign {
+    height: fit-content;
+    width: fit-content;
+  }
+
+  .log-sign_container {
+    margin-right: 1rem;
+  }
+
+  .a_text_main {
+    z-index: 9;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .a_text_main {
+    z-index: 9;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  p,
+  ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+  }
+
+  .a_text {
+    z-index: 9;
+    color: #a1a1a1;
+    transition: all 0.3s ease;
+  }
+
+  .a_text:hover {
+    color: #e7e7e7;
+  }
+
+  .login_text {
+    text-decoration: underline;
+  }
+
+  nav ul li a:hover {
+    color: rgb(7, 7, 7);
+  }
+
+  nav ul li a.active {
+    color: #fff;
+  }
+
+  nav ul li a:hover:after {
+    width: 100%;
+  }
+  .handBurger {
+    display: none;
+    cursor: pointer;
+    background: red;
+    border-radius: 20px;
+    width: 3rem;
+    padding: 2px;
+  }
+
+  .menu_icon {
+    height: 25px;
+    width: 25px;
+    color: #000000;
+  }
+
+  .li_mobile {
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .li_mobile:hover {
+    background: #1e1e1e;
+  }
+
+  .mobile_menu_container {
+    height: 300px;
+    position: absolute;
+    top: 62px;
+    right: 3px;
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    transition: ease-out 1s;
+    overflow: hidden;
+    z-index: 9;
+  }
+
+  .log-sign_mob {
+    height: 32px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+  }
+
+  .login_btn_mob {
+    background: red;
+  }
+
+  .hide {
+    transition: all 0.5s ease;
+    display: none;
+  }
+
+  .mobile_menu {
+    background-color: rgb(19, 14, 14);
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .li_mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    height: 50px;
+    border-bottom: 1px dashed rgb(194, 190, 190, 0.5);
+  }
+
+  .li_mobile a,
+  .li_mobile p {
+    color: #fff;
+  }
+
+  .logo_mob {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo_mob .width_dec {
+    margin-left: 0;
+  }
+
+  
+  .nav_a {
+    height: 50px;
+  }
+
+  .log-sign_container_mob {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav_a {
+    height: 43px;
+    width: 9rem;
+  }
+
+  @media screen and (max-width: 675px) {
+    .handBurger {
+      display: flex;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    .nav-t,
+    .log-sign_container {
+      display: none;
+    }
+    .unhide {
+      display: flex;
+    }
+  }

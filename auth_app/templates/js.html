@@ -1,0 +1,17 @@
+<style>
+  /* CSS Animation */
+  @keyframes hideAfter3Seconds {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: -9999px;
+    }
+  }
+
+  .alert {
+    animation: hideAfter3Seconds 4s forwards;
+    animation-delay: 3s;
+  }
+</style>

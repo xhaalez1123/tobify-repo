@@ -1,0 +1,183 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{%static 'media/icon.png'%}" type="image/png" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{%static 'css/login.css'%}" />
+
+    <title>Login</title>
+  </head>
+  <body>
+    {% if messages %} {% for message in messages %}
+    <div
+      style="position: fixed; top: 20px; left: 35%; z-index: 9999; width: 30%"
+      class="alert alert-warning alert-dismissible fade show"
+      role="alert"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %}
+    <header>
+      <div class="nav-div">
+        <nav>
+          <a class="width_dec" href="https://tobix.dev">
+            <img class="nav_a" src="{%static 'media/logo.svg'%}" alt="LOGO" />
+          </a>
+          <ul class="nav-t">
+            <li class="li">
+              <div class="nav_item_container">
+                <a class="font-six a_class" href="https://tobix.dev"
+                  ><p class="a_text">Home</p></a
+                >
+              </div>
+            </li>
+            <li class="li">
+              <div class="nav_item_container">
+                <a class="font-six a_class" href="https://t.me/tobichecker"
+                  ><p class="a_text">Telegram</p></a
+                >
+              </div>
+            </li>
+          </ul>
+          <ul class="log-sign_container">
+            <li class="li log-sign">
+              <div class="nav_item_container">
+                <a class="font-six a_class" href="/login"
+                  ><p class="a_text login_text">Log-in</p></a
+                >
+              </div>
+            </li>
+            <li class="li log-sign">
+              <div class="nav_item_container login_btn">
+                <a class="font-six a_class" href="/register"
+                  ><p class="a_text_main">Sign-up</p></a
+                >
+              </div>
+            </li>
+          </ul>
+          <div class="handBurger">
+            <img class="menu_icon" src="{%static 'media/menu.svg'%}" alt="" />
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section>
+      <div class="mobile_menu_container hide">
+        <div class="mobile_menu">
+          <div class="menu_close logo_mob">
+            <a class="width_dec" href="#">
+              <img class="nav_a" src="{%static 'media/logo.svg'%}" alt="LOGO" />
+            </a>
+          </div>
+          <a class="font-six menu_close" href="https://tobix.dev">
+            <div class="li_mobile">
+              <p>Home</p>
+              <p>></p>
+            </div>
+          </a>
+          <a class="font-six menu_close" href="https://t.me/tobichecker">
+            <div class="li_mobile">
+              <p>Telegram</p>
+              <p>></p>
+            </div>
+          </a>
+          <ul class="log-sign_container_mob">
+            <li class="li log-sign_mob">
+              <div class="nav_item_container_mob">
+                <a class="font-six a_class_mob" href="/login"
+                  ><p class="a_text login_text">Log-in</p></a
+                >
+              </div>
+            </li>
+            <li class="li log-sign_mob login_btn">
+              <div class="nav_item_container_mob">
+                <a class="font-six a_class" href="/register"
+                  ><p class="a_text_main">Sign-up</p></a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container mt-5 pt-5">
+        <div class="row">
+          <div class="col-12 col-sm-7 col-md-6 m-auto">
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <svg
+                  class="mx-auto my-3 d-block"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  fill="currentColor"
+                  class="bi bi-person-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  />
+                </svg>
+                <form
+                  action=""
+                  method="post"
+                  enctype="application/x-www-form-urlencoded"
+                >
+                  {% csrf_token %}
+                  <input
+                    type="text"
+                    name="username"
+                    id=""
+                    class="form-control my-4 py-2"
+                    placeholder="Username"
+                  />
+                  <input
+                    type="text"
+                    name="password"
+                    id=""
+                    class="form-control my-4 py-2"
+                    placeholder="Password"
+                  />
+                  <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="/register" class="nav-link">
+                      Don't you have an account ?
+                    </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{%static 'js/main.js'%}"></script>
+    {% include 'js.html' %}
+  </body>
+</html>
