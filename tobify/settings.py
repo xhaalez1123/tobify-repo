@@ -28,8 +28,10 @@ SECRET_KEY = 'django-insecure-jw4x0jyxn##2crsck+=w-owzs!3-@5bs@jo#pom4*$_x_@io3!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['tobify-repo-production.up.railway.app',
+                 'tobix.dev', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://tobify-repo-production.up.railway.app']
 
 # Application definition
 
