@@ -22,6 +22,7 @@ urlpatterns = [
     path('register/', register_page, name='register_page'),
     path('login/', login_page, name='login_page'),
     path('verify/', verify_email, name='verify_email'),
+    path('resend/', resend_mail, name='resend_mail'),
     path('new/', new_note, name='new_note'),
     path('logout/', log_out, name='logout'),
     path('', home, name='home')

@@ -108,3 +108,13 @@ def home(request):
             messages.info(request, "Please verify your email")
             return redirect('/verify/')
     return render(request, 'index.html')
+
+
+@login_required(login_url='/login/')
+def resend_mail(request):
+    user = request.user
+    if user.is_verified:
+        return redirect('/')
+    send_email(user, user.otp)
+    messages.info(request, "OTP sent to your email")
+    return redirect('/verify/')

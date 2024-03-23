@@ -32,6 +32,21 @@
       <form method="POST">
         {% csrf_token %}
         <input class="input" type="text" name="otp" placeholder="Enter OTP" />
+        <div
+          style="
+            height: 5px;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            margin-bottom: 2px;
+          "
+          ;
+        >
+          <a style="color: black" href="{% url 'resend_mail' %}"
+            ><p>resend OTP</p></a
+          >
+        </div>
         <button class="btn" type="submit">Verify</button>
       </form>
     </div>
