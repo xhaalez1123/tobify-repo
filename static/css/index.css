@@ -133,12 +133,13 @@
 
   .body-1 h3 {
     color: #ff004f;
-    margin-top: 8vw;
+    margin-top: 7vw;
     letter-spacing: 3px;
+    font-weight: 700;
   }
   .body-1 #bio-exp {
     margin-top: 5vh;
-    width: 79ch;
+    width: 70ch;
     line-height: 1.5rem;
   }
 
@@ -146,7 +147,7 @@
     letter-spacing: 1px;
     padding: 10px 0 20px 0;
     width: 100%;
-    font-size: xxx-large;
+    font-size: 3.5rem;
   }
 
   .width_dec {
@@ -168,8 +169,9 @@
     display: flex;
     font-size: medium;
     font-weight: 500;
-    height: 2.5rem;
+    height: 2.3rem;
     justify-content: left;
+    align-items: center;
     margin: 25px 0;
     outline: none;
     padding: 10px 10px;
