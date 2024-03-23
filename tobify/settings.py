@@ -31,7 +31,6 @@ DEBUG = False
 ALLOWED_HOSTS = ['tobify-repo-production.up.railway.app',
                  'tobix.dev', '127.0.0.1', 'www.tobix.dev']
 
-CSRF_TRUSTED_ORIGINS = ['https://tobify-repo-production.up.railway.app']
 
 # Application definition
 
