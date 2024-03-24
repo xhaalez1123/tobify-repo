@@ -15,3 +15,13 @@
     animation-delay: 3s;
   }
 </style>
+
+<script>
+  const passwordInput = document.getElementById("password");
+  const showPasswordCheckbox = document.getElementById("showPassword");
+
+  // Toggle password visibility based on checkbox state
+  showPasswordCheckbox.addEventListener("change", () => {
+    passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
+  });
+</script>

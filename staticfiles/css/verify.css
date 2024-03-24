@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: z;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s;
 }
 
 body{
@@ -21,17 +24,33 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     
 }
 
+.head{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h1{
-    font-size: 30px;
+    font-size: 31px;
     font-weight: 500;
     margin-bottom: 20px;
     color: #000000;
+    font-family: "Pacifico", cursive;
 }
 
 form{
@@ -47,7 +66,7 @@ form{
     /* write css fot otp input field */
     width: 80%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 3rem;
     padding: 0 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -60,10 +79,28 @@ form{
     height: 40px;
     margin-bottom: 20px;
     border-radius: 5px;
+    color: #ffffff;
     border: none;
     outline: none;
     font-size: 16px;
+    background: #000000;
 
+}
+
+.resend{
+    height: 4px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.resend p{
+    font-size: 14px;
+}
+
+.resend p:hover{
+    font-size: 14.2px;
 }
 
 .input:focus{
@@ -71,10 +108,9 @@ form{
 }
 
 .btn:hover{
-    background: #000000;
-    color: #ffffff;
     cursor: pointer;
-    
+    background: #242424;
+    color: #ffffff;
 }
 
 .alert{

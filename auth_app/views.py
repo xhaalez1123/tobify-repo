@@ -16,6 +16,11 @@ def register_page(request):
         password = request.POST.get('password')
         email = request.POST.get('email')
 
+        # check weather the email in currect format or not
+        if "@" not in email or "." not in email.split("@")[1]:
+            messages.info(request, "Invalide email")
+            return redirect('/register/')
+
         user = User.objects.filter(email=email)
 
         if user.exists():
@@ -47,8 +52,12 @@ def login_page(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
+        if "@" not in email or "." not in email.split("@")[1]:
+            messages.info(request, "Invalide email")
+            return redirect('/login/')
+
         if not User.objects.filter(email=email).exists():
-            messages.info(request, "Invalide username")
+            messages.info(request, "Invalide Email")
             return redirect('/login/')
 
         user = authenticate(email=email, password=password)
@@ -98,6 +107,9 @@ def log_out(request):
 
 @login_required(login_url='/login/')
 def new_note(request):
+    if not request.user.is_verified:
+        messages.info(request, "Please verify your email")
+        return redirect('/verify/')
     return HttpResponse('<h1>Successfully logged-in</h1><a href="/logout"><h1>Log-out</h1></a> ')
 
 
@@ -115,6 +127,9 @@ def resend_mail(request):
     user = request.user
     if user.is_verified:
         return redirect('/')
-    send_email(user, user.otp)
+    otp = random.randint(100000, 999999)
+    user.otp = otp
+    send_email(user, otp)
+    user.save()
     messages.info(request, "OTP sent to your email")
     return redirect('/verify/')

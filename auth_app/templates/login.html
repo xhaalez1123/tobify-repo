@@ -33,90 +33,9 @@
         aria-label="Close"
       ></button>
     </div>
-    {% endfor %} {% endif %}
-    <header>
-      <div class="nav-div">
-        <nav>
-          <a class="width_dec" href="https://tobix.dev">
-            <img class="nav_a" src="{%static 'media/logo.svg'%}" alt="LOGO" />
-          </a>
-          <ul class="nav-t">
-            <li class="li">
-              <div class="nav_item_container">
-                <a class="font-six a_class" href="https://tobix.dev"
-                  ><p class="a_text">Home</p></a
-                >
-              </div>
-            </li>
-            <li class="li">
-              <div class="nav_item_container">
-                <a class="font-six a_class" href="https://t.me/tobichecker"
-                  ><p class="a_text">Telegram</p></a
-                >
-              </div>
-            </li>
-          </ul>
-          <ul class="log-sign_container">
-            <li class="li log-sign">
-              <div class="nav_item_container">
-                <a class="font-six a_class" href="/login"
-                  ><p class="a_text login_text">Log-in</p></a
-                >
-              </div>
-            </li>
-            <li class="li log-sign">
-              <div class="nav_item_container login_btn">
-                <a class="font-six a_class" href="/register"
-                  ><p class="a_text_main">Sign-up</p></a
-                >
-              </div>
-            </li>
-          </ul>
-          <div class="handBurger">
-            <img class="menu_icon" src="{%static 'media/menu.svg'%}" alt="" />
-          </div>
-        </nav>
-      </div>
-    </header>
+    {% endfor %} {% endif %} {% include 'navbar.html' %}
 
     <section>
-      <div class="mobile_menu_container hide">
-        <div class="mobile_menu">
-          <div class="menu_close logo_mob">
-            <a class="width_dec" href="#">
-              <img class="nav_a" src="{%static 'media/logo.svg'%}" alt="LOGO" />
-            </a>
-          </div>
-          <a class="font-six menu_close" href="https://tobix.dev">
-            <div class="li_mobile">
-              <p>Home</p>
-              <p>></p>
-            </div>
-          </a>
-          <a class="font-six menu_close" href="https://t.me/tobichecker">
-            <div class="li_mobile">
-              <p>Telegram</p>
-              <p>></p>
-            </div>
-          </a>
-          <ul class="log-sign_container_mob">
-            <li class="li log-sign_mob">
-              <div class="nav_item_container_mob">
-                <a class="font-six a_class_mob" href="/login"
-                  ><p class="a_text login_text">Log-in</p></a
-                >
-              </div>
-            </li>
-            <li class="li log-sign_mob login_btn">
-              <div class="nav_item_container_mob">
-                <a class="font-six a_class" href="/register"
-                  ><p class="a_text_main">Sign-up</p></a
-                >
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
       <div class="container mt-5 pt-5">
         <div class="row">
           <div class="col-12 col-sm-7 col-md-6 m-auto">
@@ -151,12 +70,23 @@
                     placeholder="Email"
                   />
                   <input
-                    type="text"
+                    type="password"
                     name="password"
-                    id=""
+                    id="password"
                     class="form-control my-4 py-2"
                     placeholder="Password"
                   />
+                  <!-- Add a checkbox for toggling password visibility -->
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="showPassword"
+                      class="form-check-input"
+                    />
+                    <label for="showPassword" class="form-check-label"
+                      >Show password</label
+                    >
+                  </div>
                   <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary">Login</button>
                     <a href="/register" class="nav-link">
