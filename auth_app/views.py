@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import CustomUser as User
+from .models import CustomUser as User, note as Note
 from .utils import send_email
 import random
 # Create your views here.
@@ -110,7 +110,25 @@ def new_note(request):
     if not request.user.is_verified:
         messages.info(request, "Please verify your email")
         return redirect('/verify/')
-    return HttpResponse('<h1>Successfully logged-in</h1><a href="/logout"><h1>Log-out</h1></a> ')
+    if request.method == 'POST':
+        note_new = Note()
+        note_new.title = request.POST.get('note_title')
+        note_new.content = request.POST.get('note_content')
+        note_new.author = request.user
+        note_new.id = note_new.title[:10] + \
+            '-' + str(random.randint(1000, 9999))
+        note_new.save()
+        return redirect('/note/' + str(note_new.id))
+    return render(request, 'new.html')
+
+
+def note_detail(request, pk):
+    try:
+        note_instance = Note.objects.get(id=pk)
+    except Note.DoesNotExist:
+        return HttpResponse("Note not found", status=404)
+
+    return render(request, 'note.html', {'note': note_instance})
 
 
 def home(request):

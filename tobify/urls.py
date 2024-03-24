@@ -24,6 +24,7 @@ urlpatterns = [
     path('verify/', verify_email, name='verify_email'),
     path('resend/', resend_mail, name='resend_mail'),
     path('new/', new_note, name='new_note'),
+    path('note/<str:pk>/', note_detail, name='note_detail'),
     path('logout/', log_out, name='logout'),
     path('', home, name='home')
 ]
