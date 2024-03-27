@@ -151,3 +151,7 @@ def resend_mail(request):
     user.save()
     messages.info(request, "OTP sent to your email")
     return redirect('/verify/')
+
+
+def about(request):
+    return render(request, 'about.html')
