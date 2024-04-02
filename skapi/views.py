@@ -8,9 +8,14 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def cheker(request):
-    if request.method == 'POST':
-        cc = request.POST.get('cc')
-        sk = request.POST.get('sk')
-        resp = utils.charge(cc, sk)
-        return HttpResponse(f'{resp}')
-    return HttpResponse('resp')
+    if request.method == 'GET':
+        try:
+            cc = request.GET.get('cc')
+            sk = request.GET.get('sk')
+            resp = utils.charge(cc, sk)
+            return HttpResponse(f'{resp}')
+        except Exception as e:
+            # Catching the specific exception raised, if any
+            return HttpResponse(r"{'cc': 'none', 'resp': 'Error', 'code': 'none', 'time': '1.7', 'bypass': 0}")
+    else:
+        return HttpResponse(r'Invalid request method')
