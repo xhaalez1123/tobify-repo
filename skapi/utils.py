@@ -206,10 +206,7 @@ def charge(cc, sktxt):
 <i>Bank:</i> <b>{bank}</b>
 <i>Level:</i> <b>{level}</b>
 <i>Type:</i> <b>{typebin}</b>
-
-<b><i>Buy Subscription: </i>@alan305fn</b>
-
-<b><i><a href='https://t.me/+deftYLgg4MY1NmYy'>Card House</a></i></b>'''.replace('\n', '%0A')
+'''.replace('\n', '%0A')
 
             elif charge.status_code == 402:
 

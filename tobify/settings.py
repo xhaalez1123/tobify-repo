@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jw4x0jyxn##2crsck+=w-owzs!3-@5bs@jo#pom4*$_x_@io3!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['tobix.dev', '127.0.0.1', 'www.tobix.dev']
 
@@ -36,7 +36,7 @@ CSRF_TRUSTED_ORIGINS = ["https://tobix.dev",
 # Application definition
 
 CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5500',  # Adjust this to match your client origin
+    'https://tobioffice.github.io',  # Adjust this to match your client origin
 ]
 
 INSTALLED_APPS = [
