@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from auth_app.views import *
+from skapi.views import cheker
 urlpatterns = [
     path('admin-tobi-tech/', admin.site.urls),
+    path('skapi/', cheker, name='cheker'),
     path('register/', register_page, name='register_page'),
     path('login/', login_page, name='login_page'),
     path('verify/', verify_email, name='verify_email'),
