@@ -3,7 +3,7 @@ import time
 import uuid
 
 
-def charge(cc, sktxt):
+def charge(cc, sktxt, cvv1):
 
     proxies = {
         "http": "http://zloWF8TVtH:ZqnGipgz9u@proxies.instaproxy.io:4678",
@@ -23,10 +23,12 @@ def charge(cc, sktxt):
     data = {
         "type": "card",
         "card[number]": card_number,
-        "card[cvc]": cvv,
         "card[exp_month]": exp_month,
         "card[exp_year]": exp_year
     }
+
+    if cvv1:
+        data["card[cvc]"] = cvv
 
     bypassing = 0
 
