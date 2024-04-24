@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-jw4x0jyxn##2crsck+=w-owzs!3-@5bs@jo#pom4*$_x_@io3!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['tobix.dev', '127.0.0.1', 'www.tobix.dev']
+ALLOWED_HOSTS = ['tobify-repo.onrender.com',]
 
 CSRF_TRUSTED_ORIGINS = ["https://tobix.dev",
                         "https://tobix.dev", ]
@@ -91,23 +91,23 @@ WSGI_APPLICATION = 'tobify.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PGDATABASE'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('PGPASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('PGDATABASE'),
+#         'USER': os.getenv('PGUSER'),
+#         'PASSWORD': os.getenv('PGPASSWORD'),
+#         'HOST': os.getenv('PGHOST'),
+#         'PORT': os.getenv('PGPORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
